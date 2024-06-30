@@ -56,6 +56,7 @@ class TaskFragment : Fragment() {
             binding.descriptionEdittext.setText(task!!.description)
             deleteTask(checkFragment!!)
             checkStatus=task!!.completed
+            binding.headerTitle.text=task!!.title
             checkComplete()
             clickComplete()
         }
