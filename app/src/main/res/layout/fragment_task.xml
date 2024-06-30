@@ -145,8 +145,7 @@
                     app:cardCornerRadius="@dimen/_8dp">
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/border_color_8dp">
+                        android:layout_height="match_parent">
                         <EditText
                             android:layout_margin="@dimen/_4dp"
                             android:id="@+id/title_edittext"
@@ -156,7 +155,7 @@
                             android:fontFamily="@font/opensans"
                             android:textColorHint="@color/gray"
                             android:backgroundTint="@color/toolbar_color"
-                            android:inputType="text"
+                            android:inputType="text|textCapSentences"
                             android:textCursorDrawable="@drawable/cursor_edittext"
                             android:hint="Title"
                             android:textStyle="bold"
@@ -192,8 +191,7 @@
                     app:cardCornerRadius="@dimen/_8dp">
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/border_color_8dp">
+                        android:layout_height="match_parent">
                         <EditText
                             android:layout_margin="@dimen/_4dp"
                             android:id="@+id/description_edittext"
@@ -241,8 +239,7 @@
                     app:cardCornerRadius="@dimen/_8dp">
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/border_color_8dp">
+                        android:layout_height="match_parent">
                         <TextView
                             android:hint="00/00/00 00:00"
                             android:id="@+id/due_date_text"

@@ -6,4 +6,7 @@
     </style>
 
     <style name="Theme.CodSoft_ToDoListApp" parent="Base.Theme.CodSoft_ToDoListApp" />
+    <style name="RoundedAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/white_left_right_top_bottom_radius</item>
+    </style>
 </resources>
