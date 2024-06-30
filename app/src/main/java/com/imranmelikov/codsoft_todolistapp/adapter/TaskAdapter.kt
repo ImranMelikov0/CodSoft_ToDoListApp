@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.imranmelikov.codsoft_todolistapp.R
+import com.imranmelikov.codsoft_todolistapp.alertdialog.AlertDialogUpdate
 import com.imranmelikov.codsoft_todolistapp.databinding.TaskRvBinding
 import com.imranmelikov.codsoft_todolistapp.db.Task
 import com.imranmelikov.codsoft_todolistapp.viewmodel.TaskViewModel
@@ -60,7 +61,7 @@ class TaskAdapter(private val viewModel: TaskViewModel):RecyclerView.Adapter<Tas
                 dueDate.text=datePart
                 dueDateHour.text=timePart
             }
-          clickComplete(this,task)
+          clickComplete(task,holder)
         }
 
         holder.itemView.setOnClickListener {
@@ -72,16 +73,12 @@ class TaskAdapter(private val viewModel: TaskViewModel):RecyclerView.Adapter<Tas
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    private fun clickComplete(binding: TaskRvBinding, task: Task){
-        binding.apply {
+    private fun clickComplete( task: Task,holder: TaskViewHolder){
+        holder.binding.apply {
             complete.setOnClickListener {
-                if (task.completed){
-                    task.completed=false
-                    complete.setImageResource(R.drawable.baseline_radio_button_active_24)
-                }else{
-                    task.completed=true
-                    complete.setImageResource(R.drawable.baseline_completed_circle_24)
-                }
+                val alertDialogUpdate=AlertDialogUpdate()
+                alertDialogUpdate.viewModel=viewModel
+                alertDialogUpdate.alertDialog(holder.itemView.context,R.layout.active_complete_alert_dialog,task,complete)
                 notifyDataSetChanged()
             }
         }
