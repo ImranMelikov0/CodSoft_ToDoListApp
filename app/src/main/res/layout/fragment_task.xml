@@ -329,10 +329,7 @@
             <Button
                 android:id="@+id/add_btn"
                 android:layout_weight="1"
-                android:layout_marginStart="@dimen/_30dp"
-                android:layout_marginEnd="@dimen/_30dp"
-                android:layout_marginTop="@dimen/_18dp"
-                android:layout_marginBottom="@dimen/_30dp"
+                android:layout_margin="@dimen/_30dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/opensans"
